@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<h1>Animal</h1>
+{% if animals %}
+{% for animal in animals %}
+	<div>
+		<h3>{{animal.title}}</h3>
+		<p>
+		- Animal name:</b> {{animal.name}}
+		- Animal noise:</b> {{animal.noise}}
+		</p>
+	</div>
+{% endfor %}
+{% endif %}
+{% endblock %}
