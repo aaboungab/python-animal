@@ -3,7 +3,7 @@ import requests
 from application import app
 import random
 
-@app.route('/get/animal',methods=['GET','POST'])
+@app.route('animal',methods=['GET','POST'])
 def get_name():
     names = ['Lion', 'Snake', 'Cow']
     name = names[random.randrange(0,3)]
