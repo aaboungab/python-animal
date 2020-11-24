@@ -1,9 +1,13 @@
 from flask import url_for 
-from flask_testing import Testcase
+from flask_testing import TestCase
 
 from app import app
 
-class TestBase(Testcase):
+class TestBase(TestCase):
+    def create_app(self):
+         return app
+
+class TestAnimals(TestBase):
     def test_animal(self):
         animals = [b'Lion', b'Snake', b'Cow']
         response = self.client.get(url_for('animal'))
