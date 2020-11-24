@@ -8,17 +8,15 @@ def animal():
     animals = ["Lion", "Snake", "Cow"]
     return Response(random.choice(animals), mimetype="text/plain")
 
-@app.route('/animal/noise', methods=['POST'])
+@app.route('/noise', methods=['POST'])
 def noise():
     animal = request.data.decode('utf-8')
     if animal == "Lion":
         noise = "Roar!"
     elif animal == "Snake":
         noise = "Ssss!"
-    elif animal == "Cow":
+    else: 
         noise = "Mooo!"
-    else:
-        return "Animal noise not found!"
     return Response(noise, mimetype="text/plain")
 
 if __name__ == "__main__":
