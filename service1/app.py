@@ -5,10 +5,10 @@ import requests
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET'])
 def index():
     animal = requests.get("http://35.242.155.212:5001/animal")
-    noise = requests.post("http://35.242.155.212:5001/animal/noise", data=animal.text)
+    noise = requests.post("http://35.242.155.212:5001/noise", data=animal.text)
 
     return render_template('index.html', animal=animal.text, noise=noise.text)
 
