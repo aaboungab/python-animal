@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
     animal = requests.get("http://35.242.155.212:5001/animal")
     noise = requests.post("http://35.242.155.212:5001/animal/noise", data=animal.text)
