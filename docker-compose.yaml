@@ -13,6 +13,5 @@ services:
     deploy:
       replicas: 3
     ports:
-    - target: 5001
-      published: 5001
+    - target: 5000
       protocol: tcp
